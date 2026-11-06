@@ -1,0 +1,57 @@
+{
+  "version": "1.0.0",
+  "createdAt": "2026-10-27T03:36:07.688Z",
+  "sessions": [
+    {
+      "startedAt": "2026-10-27T11:28:59.633Z",
+      "endedAt": "2026-10-27T11:28:59.633Z",
+      "status": "completed"
+    },
+    {
+      "startedAt": "2026-10-27T12:04:02.649Z",
+      "endedAt": "2026-10-27T12:04:02.649Z",
+      "status": "completed"
+    },
+    {
+      "startedAt": "2026-11-02T14:23:38.933Z",
+      "endedAt": "2026-11-02T14:23:38.933Z",
+      "status": "completed"
+    },
+    {
+      "startedAt": "2026-11-02T14:23:40.705Z",
+      "endedAt": "2026-11-02T14:23:40.705Z",
+      "status": "completed"
+    },
+    {
+      "startedAt": "2026-11-05T09:19:33.902Z",
+      "endedAt": "2026-11-05T09:19:33.902Z",
+      "status": "completed"
+    },
+    {
+      "startedAt": "2026-11-05T18:08:54.601Z",
+      "endedAt": "2026-11-05T18:08:54.601Z",
+      "status": "completed"
+    },
+    {
+      "startedAt": "2026-11-05T18:08:54.647Z",
+      "endedAt": "2026-11-05T18:08:54.647Z",
+      "status": "completed"
+    },
+    {
+      "startedAt": "2026-11-05T18:08:54.662Z",
+      "endedAt": "2026-11-05T18:08:54.662Z",
+      "status": "completed"
+    },
+    {
+      "startedAt": "2026-11-05T18:08:54.936Z",
+      "endedAt": "2026-11-05T18:08:54.936Z",
+      "status": "completed"
+    },
+    {
+      "startedAt": "2026-11-06T09:16:40.543Z",
+      "endedAt": "2026-11-06T09:16:40.543Z",
+      "status": "completed"
+    }
+  ],
+  "context": {}
+}

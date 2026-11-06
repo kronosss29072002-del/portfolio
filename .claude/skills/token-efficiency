@@ -1,0 +1,145 @@
+---
+name: token-efficiency
+description: Guidelines for minimizing token usage while maintaining quality. Use when you need to reduce output verbosity, optimize context usage, or improve response efficiency.
+tools: All
+---
+
+# Token Efficiency Guidelines
+
+## Core Principles
+
+1. **No Preambles**: Skip "I'll help you with that" or "Let me explain"
+2. **No Restatements**: Don't repeat the user's question back to them
+3. **Direct Answers First**: Lead with the answer, then explain if needed
+4. **Code Over Prose**: Show, don't tell
+5. **Bullet Points**: Use lists instead of paragraphs
+6. **Skip Unsolicited Suggestions**: Only suggest what was asked for
+
+## Response Patterns
+
+### ❌ Verbose (Bad)
+```
+I'd be happy to help you with that! Let me explain how to implement authentication.
+
+First, you'll need to understand the concept of JWT tokens. JWT stands for JSON Web Token,
+which is a compact, URL-safe means of representing claims to be transferred between two parties.
+
+Here's how you can implement it:
+
+[long explanation]
+
+Would you like me to explain anything else? I'm here to help!
+```
+
+### ✅ Concise (Good)
+```
+JWT implementation:
+
+1. Install: `npm install jsonwebtoken bcrypt`
+2. Generate token on login
+3. Verify in middleware
+
+```js
+// Generate
+const token = jwt.sign({ userId }, SECRET, { expiresIn: '1h' });
+
+// Verify middleware
+const verify = (req, res, next) => {
+  const token = req.headers.authorization?.split(' ')[1];
+  req.user = jwt.verify(token, SECRET);
+  next();
+};
+```
+```
+
+## Token-Saving Techniques
+
+### 1. Use Structured Formats
+```
+❌ "The function takes three parameters: name (string), age (number), and email (string)"
+✅ "Parameters: name: string, age: number, email: string"
+```
+
+### 2. Omit Obvious Context
+```
+❌ "To create a React component, you need to import React first..."
+✅ "```jsx\nimport React from 'react';\nconst Component = () => ..."
+```
+
+### 3. Use Code Comments
+```
+❌ "This function validates the email by checking if it contains @ and a domain..."
+✅
+```js
+// Validates email format: user@domain.tld
+function validateEmail(email) { ... }
+```
+
+### 4. Reference, Don't Repeat
+```
+❌ [Pastes entire 100-line file with one change highlighted]
+✅ "Update line 42 in `auth.js`: change `return null` to `throw new AuthError()`"
+```
+
+### 5. Use Abbreviations When Clear
+```
+❌ "The configuration file is located in the config directory"
+✅ "Config file: `config/app.js`"
+```
+
+## Self-Check Checklist
+
+Before responding, ask:
+- [ ] Did I restate the question? → Remove it
+- [ ] Am I adding a preamble? → Skip it
+- [ ] Can this be code instead of prose? → Convert it
+- [ ] Am I explaining the obvious? → Remove it
+- [ ] Did I add unsolicited suggestions? → Remove them
+- [ ] Can I use bullet points? → Convert paragraphs
+
+## When to Be Verbose
+
+Token efficiency doesn't mean sacrificing clarity. Be verbose when:
+- Explaining complex concepts to beginners
+- Documenting critical security considerations
+- Providing step-by-step tutorials
+- The user explicitly asks for detailed explanations
+
+## Integration
+
+Apply these guidelines automatically, or invoke explicitly:
+```
+/token-efficiency
+```
+
+Or ask: "Make this response more concise"
+
+## Metrics
+
+Target: 40-60% reduction in output tokens while maintaining quality.
+
+Track by comparing response length before/after applying guidelines.
+
+## Anti-Patterns
+
+- ❌ Being terse to the point of being unhelpful
+- ❌ Removing necessary context
+- ❌ Sacrificing clarity for brevity
+- ❌ Applying to educational content where detail is needed
+- ❌ Being abrupt or dismissive
+
+## Balance
+
+**Goal**: Efficient communication, not minimal communication.
+
+Good token efficiency means:
+- Every word earns its place
+- No redundancy
+- Clear and actionable
+- Respects the user's time
+
+Bad token efficiency means:
+- Cryptic responses
+- Missing context
+- Confusing brevity
+- Feeling rushed

@@ -1,0 +1,994 @@
+<title>Nhat Minh Portfolio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&display=swap" rel="stylesheet">
+<style>
+/* Layout: Editorial grid with strong typographic hierarchy and intentional asymmetry */
+:root {
+  --bg-primary: #0f1419;
+  --bg-secondary: #1a1f26;
+  --bg-tertiary: #242b35;
+  --text-primary: #e8eaed;
+  --text-secondary: #9aa0a6;
+  --text-tertiary: #6b7280;
+  --accent: #d4a574;
+  --accent-hover: #e8b888;
+  --border: #2d3540;
+  --border-light: #3a4250;
+  --success: #4ade80;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+  --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg-primary: #0f1419;
+    --bg-secondary: #1a1f26;
+    --bg-tertiary: #242b35;
+    --text-primary: #e8eaed;
+    --text-secondary: #9aa0a6;
+    --text-tertiary: #6b7280;
+    --accent: #d4a574;
+    --accent-hover: #e8b888;
+    --border: #2d3540;
+    --border-light: #3a4250;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg-primary: #0f1419;
+  --bg-secondary: #1a1f26;
+  --bg-tertiary: #242b35;
+  --text-primary: #e8eaed;
+  --text-secondary: #9aa0a6;
+  --text-tertiary: #6b7280;
+  --accent: #d4a574;
+  --accent-hover: #e8b888;
+  --border: #2d3540;
+  --border-light: #3a4250;
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg-primary: #faf9f7;
+    --bg-secondary: #f0ede8;
+    --bg-tertiary: #e8e4dd;
+    --text-primary: #1a1f26;
+    --text-secondary: #4a5568;
+    --text-tertiary: #718096;
+    --accent: #b8865c;
+    --accent-hover: #a07550;
+    --border: #d4d0c8;
+    --border-light: #c4bfb5;
+    color-scheme: light;
+  }
+}
+
+:root[data-theme="light"] {
+  --bg-primary: #faf9f7;
+  --bg-secondary: #f0ede8;
+  --bg-tertiary: #e8e4dd;
+  --text-primary: #1a1f26;
+  --text-secondary: #4a5568;
+  --text-tertiary: #718096;
+  --accent: #b8865c;
+  --accent-hover: #a07550;
+  --border: #d4d0c8;
+  --border-light: #c4bfb5;
+  color-scheme: light;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Navigation */
+nav {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border);
+  z-index: 100;
+  padding-block: 1rem;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0 0 auto;
+  height: env(safe-area-inset-top, 0px);
+  z-index: 10;
+  background: var(--bg-primary);
+}
+
+nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-family: var(--font-mono);
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+/* Hero Section */
+.hero {
+  padding-block: 6rem 4rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.hero-label {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
+  text-wrap: balance;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.hero-meta {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.meta-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.meta-value {
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+/* Section Styles */
+section {
+  padding-block: 4rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.section-header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  align-items: baseline;
+}
+
+.section-number {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+}
+
+/* About Section */
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.about-text {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+.about-text p {
+  margin-bottom: 1.5rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.stat-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  padding: 1.5rem;
+  transition: border-color 0.2s;
+}
+
+.stat-card:hover {
+  border-color: var(--accent);
+}
+
+.stat-value {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Skills Section */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.skill-category {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  padding: 2rem;
+}
+
+.skill-category h3 {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.skill-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.skill-list li {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  padding: 0.5rem 0;
+  transition: color 0.2s;
+}
+
+.skill-list li:hover {
+  color: var(--text-primary);
+}
+
+/* Experience Section */
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.experience-item {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.experience-item:last-child {
+  border-bottom: none;
+}
+
+.experience-period {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: var(--text-tertiary);
+  padding-top: 0.25rem;
+}
+
+.experience-content h3 {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+.experience-company {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+}
+
+.experience-achievements {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.experience-achievements li {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.experience-achievements li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-family: var(--font-mono);
+}
+
+/* Projects Section */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+.project-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  padding: 2.5rem;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.project-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+
+.project-title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+.project-link {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: var(--accent);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+
+.project-link:hover {
+  color: var(--accent-hover);
+}
+
+.project-description {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tech-tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+  background: var(--bg-tertiary);
+  padding: 0.375rem 0.75rem;
+  border: 1px solid var(--border-light);
+}
+
+.project-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.metric-value {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--accent);
+}
+
+.metric-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Contact Section */
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.contact-text {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.contact-link:hover {
+  border-color: var(--accent);
+  background: var(--bg-tertiary);
+}
+
+.contact-link-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.contact-link-value {
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+/* Footer */
+footer {
+  padding-block: 2rem;
+  text-align: center;
+  color: var(--text-tertiary);
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    gap: 1rem;
+  }
+
+  .hero {
+    padding-block: 4rem 3rem;
+  }
+
+  .about-content,
+  .contact-content {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-item {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .section-header {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero-meta {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .project-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Animations */
+@media (prefers-reduced-motion: no-preference) {
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+
+  .hero-content {
+    animation-delay: 0.2s;
+  }
+
+  section {
+    animation: fadeIn 0.8s ease-out;
+  }
+}
+
+/* Accessibility */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--bg-primary);
+}
+</style>
+
+<nav>
+  <div class="container">
+    <div class="logo">nhatminh.dev</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="container">
+  <section class="hero">
+    <div class="hero-content fade-in">
+      <div>
+        <div class="hero-label">Full-stack Developer</div>
+        <h1>Nguyen Luu <em>Nhat Minh</em></h1>
+        <p class="hero-subtitle">
+          Building scalable web applications with robust backend architecture and modern frontend frameworks. Focused on delivering production-ready solutions with measurable impact.
+        </p>
+        <div class="hero-meta">
+          <div class="meta-item">
+            <span class="meta-label">Location</span>
+            <span class="meta-value">Ho Chi Minh City</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Education</span>
+            <span class="meta-value">University of Information Technology</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Available</span>
+            <span class="meta-value">Open to opportunities</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="section-header">
+      <span class="section-number">01</span>
+      <h2 class="section-title">About</h2>
+    </div>
+    <div class="about-content">
+      <div class="about-text">
+        <p>
+          Proactive Full-stack Developer with hands-on experience building production applications. I specialize in NestJS backend architecture and React/Next.js frontend development, with a strong emphasis on code quality, testing, and performance optimization.
+        </p>
+        <p>
+          My work spans from designing modular monolith systems to implementing automated testing pipelines that reduce manual effort by 50%. I'm passionate about writing clean, maintainable code and delivering solutions that solve real problems.
+        </p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">2+</div>
+          <div class="stat-label">Production Projects</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">94%</div>
+          <div class="stat-label">Test Coverage</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">50%</div>
+          <div class="stat-label">Manual Testing Reduction</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">40+</div>
+          <div class="stat-label">Automated Test Scripts</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="section-header">
+      <span class="section-number">02</span>
+      <h2 class="section-title">Technical Skills</h2>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-category">
+        <h3>Backend</h3>
+        <ul class="skill-list">
+          <li>JavaScript / TypeScript</li>
+          <li>NestJS</li>
+          <li>Java</li>
+          <li>RESTful APIs</li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <h3>Frontend</h3>
+        <ul class="skill-list">
+          <li>React.js</li>
+          <li>Next.js</li>
+          <li>Redux</li>
+          <li>Tailwind CSS</li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <h3>Database & Infrastructure</h3>
+        <ul class="skill-list">
+          <li>PostgreSQL</li>
+          <li>Redis</li>
+          <li>Docker</li>
+          <li>Prisma ORM</li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <h3>Testing & Quality</h3>
+        <ul class="skill-list">
+          <li>Playwright</li>
+          <li>Unit Testing</li>
+          <li>E2E Testing</li>
+          <li>CI/CD</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="section-header">
+      <span class="section-number">03</span>
+      <h2 class="section-title">Experience</h2>
+    </div>
+    <div class="experience-list">
+      <div class="experience-item">
+        <div class="experience-period">Mar 2026 — Oct 2026</div>
+        <div class="experience-content">
+          <h3>Software Engineer</h3>
+          <div class="experience-company">
+            <a href="https://datarealities.com/" target="_blank" rel="noopener" style="color: inherit; text-decoration: none; border-bottom: 1px solid var(--border-light); transition: border-color 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border-light)'">Data Realities</a> · Singapore
+          </div>
+          <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.5rem; font-size: 0.95rem;">
+            Contributed to a retail analytics platform that integrates IoT-based in-store visitor tracking with a web application to help businesses understand customer traffic and evaluate the effectiveness of promotional events. The platform leverages AI-driven analytics to measure how marketing campaigns and store events influence customer engagement and foot traffic.
+          </p>
+          <ul class="experience-achievements">
+            <li>Developed and maintained 40+ automated end-to-end test scripts using Playwright, reducing manual regression testing effort by approximately 50%</li>
+            <li>Supported testing and quality assurance across 8+ production releases, identifying potential issues before deployment</li>
+            <li>Implemented 8+ React.js UI components based on Figma designs and integrated RESTful APIs to deliver functional frontend features</li>
+            <li>Investigated and resolved 12+ software defects, primarily involving frontend functionality, UI behavior, and API integration</li>
+            <li>Collaborated with senior developers and team members to improve application reliability, maintainability, and overall user experience</li>
+          </ul>
+          <div class="project-tech" style="margin-top: 1.5rem;">
+            <span class="tech-tag">React.js</span>
+            <span class="tech-tag">TypeScript</span>
+            <span class="tech-tag">Playwright</span>
+            <span class="tech-tag">REST APIs</span>
+            <span class="tech-tag">Figma</span>
+            <span class="tech-tag">Git</span>
+          </div>
+        </div>
+      </div>
+      <div class="experience-item">
+        <div class="experience-period">Aug 2025 — Feb 2026</div>
+        <div class="experience-content">
+          <h3>Frontend Developer</h3>
+          <div class="experience-company">
+            <a href="https://tanca.io/" target="_blank" rel="noopener" style="color: inherit; text-decoration: none; border-bottom: 1px solid var(--border-light); transition: border-color 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border-light)'">Tanca</a> · Ho Chi Minh City
+          </div>
+          <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.5rem; font-size: 0.95rem;">
+            Contributed to Tanca, a Vietnamese SaaS-based Human Resource Management (HRM) platform featured on Shark Tank Vietnam. Available through web and mobile applications, the platform helps businesses digitalize workforce management through employee attendance tracking, shift scheduling, payroll management, and HR operations.
+          </p>
+          <ul class="experience-achievements">
+            <li>Developed 15+ responsive frontend screens and 12+ reusable UI components using React.js and Tailwind CSS, translating Figma designs into functional user interfaces</li>
+            <li>Integrated RESTful APIs and worked with Redux to manage application state and support seamless communication between frontend and backend services</li>
+            <li>Collaborated closely with backend developers, QA testers, and other team members to implement features, resolve bugs, and ensure consistent application behavior</li>
+            <li>Worked under the guidance of the team leader to deliver assigned development tasks, follow project requirements, and maintain code quality</li>
+            <li>Contributed to frontend performance improvements through lazy loading and asset optimization to enhance application responsiveness and loading efficiency</li>
+          </ul>
+          <div class="project-tech" style="margin-top: 1.5rem;">
+            <span class="tech-tag">React.js</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Redux</span>
+            <span class="tech-tag">Tailwind CSS</span>
+            <span class="tech-tag">REST APIs</span>
+            <span class="tech-tag">Figma</span>
+            <span class="tech-tag">Git</span>
+          </div>
+          <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="https://play.google.com/store/apps/details?id=vn.greenapp.worktrack" target="_blank" rel="noopener" style="font-family: var(--font-mono); font-size: 0.875rem; color: var(--accent); text-decoration: none; padding: 0.5rem 1rem; background: var(--bg-tertiary); border: 1px solid var(--border-light); transition: all 0.2s;" onmouseover="this.style.borderColor='var(--accent)'; this.style.background='var(--bg-secondary)'" onmouseout="this.style.borderColor='var(--border-light)'; this.style.background='var(--bg-tertiary)'">Google Play →</a>
+            <a href="https://apps.apple.com/vn/app/tanca-time-tracking-payroll/id1370259842" target="_blank" rel="noopener" style="font-family: var(--font-mono); font-size: 0.875rem; color: var(--accent); text-decoration: none; padding: 0.5rem 1rem; background: var(--bg-tertiary); border: 1px solid var(--border-light); transition: all 0.2s;" onmouseover="this.style.borderColor='var(--accent)'; this.style.background='var(--bg-secondary)'" onmouseout="this.style.borderColor='var(--border-light)'; this.style.background='var(--bg-tertiary)'">App Store →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="section-header">
+      <span class="section-number">04</span>
+      <h2 class="section-title">Featured Projects</h2>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-header">
+          <h3 class="project-title">HookLab</h3>
+          <a href="https://hooklab.caphesuachua.blog" class="project-link" target="_blank" rel="noopener">View Live →</a>
+        </div>
+        <p class="project-description">
+          A webhook debugger that captures signed webhooks, provides a live timeline inspection interface, and enables replay of edited payloads through an authenticated API. Built as a full-stack npm-workspace monorepo with multi-tenant access control and HMAC-SHA256 verification.
+        </p>
+        <div class="project-tech">
+          <span class="tech-tag">NestJS 11</span>
+          <span class="tech-tag">React 18</span>
+          <span class="tech-tag">TypeScript</span>
+          <span class="tech-tag">PostgreSQL 16</span>
+          <span class="tech-tag">Prisma 7</span>
+          <span class="tech-tag">Docker</span>
+          <span class="tech-tag">Cloudflare</span>
+        </div>
+        <div class="project-metrics">
+          <div class="metric">
+            <span class="metric-value">94.45%</span>
+            <span class="metric-label">Backend Coverage</span>
+          </div>
+          <div class="metric">
+            <span class="metric-value">607</span>
+            <span class="metric-label">Total Tests</span>
+          </div>
+          <div class="metric">
+            <span class="metric-value">45ms</span>
+            <span class="metric-label">p95 Response</span>
+          </div>
+          <div class="metric">
+            <span class="metric-value">500/500</span>
+            <span class="metric-label">Load Test Success</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <h3 class="project-title">Ecommerce Platform</h3>
+          <a href="https://shop.caphesuachua.blog" class="project-link" target="_blank" rel="noopener">View Live →</a>
+        </div>
+        <p class="project-description">
+          A scalable e-commerce platform built with Modular Monolith architecture, featuring multi-vendor management, e-wallet system, flash sales, loyalty programs, and dynamic CMS. Integrated with a Python-based ML recommendation service using NMF/SVD models for personalized product suggestions.
+        </p>
+        <div class="project-tech">
+          <span class="tech-tag">NestJS</span>
+          <span class="tech-tag">Next.js</span>
+          <span class="tech-tag">TypeScript</span>
+          <span class="tech-tag">PostgreSQL</span>
+          <span class="tech-tag">Redis</span>
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">Docker</span>
+          <span class="tech-tag">WebSockets</span>
+        </div>
+        <div class="project-metrics">
+          <div class="metric">
+            <span class="metric-value">ML</span>
+            <span class="metric-label">AI Integration</span>
+          </div>
+          <div class="metric">
+            <span class="metric-value">Real-time</span>
+            <span class="metric-label">Chat & Notifications</span>
+          </div>
+          <div class="metric">
+            <span class="metric-value">Async</span>
+            <span class="metric-label">Message Queues</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="section-header">
+      <span class="section-number">05</span>
+      <h2 class="section-title">Get in Touch</h2>
+    </div>
+    <div class="contact-content">
+      <div class="contact-text">
+        <p>
+          I'm currently open to new opportunities and interesting projects. Whether you have a question, want to discuss a potential collaboration, or just want to say hello, feel free to reach out.
+        </p>
+      </div>
+      <div class="contact-links">
+        <a href="mailto:nguyen.luunhatminh02@gmail.com" class="contact-link">
+          <div>
+            <div class="contact-link-label">Email</div>
+            <div class="contact-link-value">nguyen.luunhatminh02@gmail.com</div>
+          </div>
+        </a>
+        <a href="tel:0703768930" class="contact-link">
+          <div>
+            <div class="contact-link-label">Phone</div>
+            <div class="contact-link-value">0703768930</div>
+          </div>
+        </a>
+        <a href="https://github.com/nguyenluunhatminh02" class="contact-link" target="_blank" rel="noopener">
+          <div>
+            <div class="contact-link-label">GitHub</div>
+            <div class="contact-link-value">@nguyenluunhatminh02</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Nguyen Luu Nhat Minh. Built with precision.</p>
+  </div>
+</footer>
+
+<script>
+// Smooth scroll for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  });
+});
+
+// Intersection Observer for fade-in animations
+if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('section').forEach(section => {
+    section.style.opacity = '0';
+    section.style.transform = 'translateY(20px)';
+    section.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+    observer.observe(section);
+  });
+}
+</script>
